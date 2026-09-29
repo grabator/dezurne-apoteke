@@ -20,14 +20,23 @@ export default async function StranicaGrada({ params }) {
 
       <h1 className="naslov-glavni">Dežurne apoteke — {grad.naziv}</h1>
 
-      <div className="info-grada">
-        <p>Izvor: {grad.izvor}</p>
-        <p>Ažurirano: {grad.azurirano}</p>
-      </div>
-
       <div className="upozorenje">
         ⚠️ Prije odlaska obavezno pozovi apoteku i provjeri radno vrijeme — podaci mogu biti
         zastarjeli.
+      </div>
+
+      <div className="info-grada">
+        <p>
+          Izvor:{" "}
+          {grad.izvorUrl ? (
+            <a href={grad.izvorUrl} target="_blank" rel="noopener noreferrer">
+              {grad.izvor}
+            </a>
+          ) : (
+            grad.izvor
+          )}
+        </p>
+        <p>Ažurirano: {grad.azurirano}</p>
       </div>
 
       {apoteke.length === 0 ? (

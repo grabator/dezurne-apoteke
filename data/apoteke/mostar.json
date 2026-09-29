@@ -1,11 +1,11 @@
 [
   {
     "id": "mostar-1",
-    "naziv": "PRIMJER Apoteka Centar Mostar - PROVJERITI",
-    "adresa": "PRIMJER ADRESA - PROVJERITI",
-    "telefon": "036 000-000 (PRIMJER)",
-    "lat": 43.3438,
-    "lng": 17.8078,
+    "naziv": "Lupriv Pharm Mostar (poslovnica 10)",
+    "adresa": "Braće Fejića 5, Mostar",
+    "telefon": "036 551 695",
+    "lat": 43.3436,
+    "lng": 17.8073,
     "radnoVrijeme": "0-24 (u mjesecu dežurstva)"
   },
   {

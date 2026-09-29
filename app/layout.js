@@ -1,5 +1,11 @@
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import RegistracijaServiceWorkera from "@/components/RegistracijaServiceWorkera";
+
+const manrope = Manrope({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-manrope",
+});
 
 export const metadata = {
   title: "Dežurne apoteke BiH",
@@ -15,7 +21,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="bs">
+    <html lang="bs" className={manrope.variable}>
       <body>
         <RegistracijaServiceWorkera />
         <header className="zaglavlje">

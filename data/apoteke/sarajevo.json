@@ -1,32 +1,102 @@
 [
   {
-    "id": "sarajevo-1",
-    "naziv": "PRIMJER Apoteka Baščaršija - PROVJERITI",
-    "adresa": "PRIMJER ADRESA - PROVJERITI",
-    "telefon": "033 000-000 (PRIMJER)",
+    "id": "sarajevo-hitna",
+    "naziv": "Apoteka Hitna",
+    "adresa": "Kolodvorska 14, Sarajevo",
+    "telefon": "033 716 331",
+    "lat": 43.8481,
+    "lng": 18.3564,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-ilijas",
+    "naziv": "Apoteka Ilijaš",
+    "adresa": "Hašima Spahića 23, Ilijaš",
+    "telefon": "033 428 810",
+    "lat": 43.9613,
+    "lng": 18.2839,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-marijin-dvor",
+    "naziv": "Apoteka Marijin Dvor",
+    "adresa": "Maršala Tita 1, Sarajevo",
+    "telefon": "033 552 130",
+    "lat": 43.8535,
+    "lng": 18.3939,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-otoka",
+    "naziv": "Apoteka Otoka",
+    "adresa": "Gradačačka 14a, Sarajevo",
+    "telefon": "033 715 360",
+    "lat": 43.8459,
+    "lng": 18.3639,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-vogosca",
+    "naziv": "Apoteka Vogošća",
+    "adresa": "Igmanska 56, Vogošća",
+    "telefon": "033 424 250",
+    "lat": 43.9147,
+    "lng": 18.3374,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-bascarsija",
+    "naziv": "Apoteka Baščaršija",
+    "adresa": "Obala Kulina bana 40, Sarajevo",
+    "telefon": "033 272 300",
     "lat": 43.8586,
     "lng": 18.4318,
     "radnoVrijeme": "0-24",
     "uvijekDezurna": true
   },
   {
-    "id": "sarajevo-2",
-    "naziv": "PRIMJER Apoteka Ilidža - PROVJERITI",
-    "adresa": "PRIMJER ADRESA - PROVJERITI",
-    "telefon": "033 000-001 (PRIMJER)",
+    "id": "sarajevo-dobrinja",
+    "naziv": "Apoteka Dobrinja",
+    "adresa": "Salke Lagumdžije 15, Sarajevo",
+    "telefon": "033 766 380",
     "lat": 43.8256,
     "lng": 18.3131,
     "radnoVrijeme": "0-24",
     "uvijekDezurna": true
   },
   {
-    "id": "sarajevo-3",
-    "naziv": "PRIMJER Apoteka Centar (nije 0-24) - PROVJERITI",
-    "adresa": "PRIMJER ADRESA - PROVJERITI",
-    "telefon": "033 000-002 (PRIMJER)",
-    "lat": 43.85,
-    "lng": 18.385,
-    "radnoVrijeme": "07-20",
-    "uvijekDezurna": false
+    "id": "sarajevo-hadzici",
+    "naziv": "Apoteka Hadžići",
+    "adresa": "Hadželi 80, Hadžići",
+    "telefon": "033 428 220",
+    "lat": 43.8138,
+    "lng": 18.2044,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-kovacici",
+    "naziv": "Apoteka Kovačići",
+    "adresa": "Zagrebačka 27, Sarajevo",
+    "telefon": "033 713 550",
+    "lat": 43.8425,
+    "lng": 18.3925,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-novo-sarajevo",
+    "naziv": "Apoteka Novo Sarajevo",
+    "adresa": "Zmaja od Bosne 51, Sarajevo",
+    "telefon": "033 713 830",
+    "lat": 43.8477,
+    "lng": 18.3789,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
   }
 ]

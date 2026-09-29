@@ -49,6 +49,7 @@ export default function ListaApoteka({ apoteke, emailZaPrijave, nazivGrada }) {
       <div className="lista-apoteka">
         {prikazaneApoteke.map((apoteka) => (
           <div className="kartica-apoteke" key={apoteka.id}>
+            <span className="oznaka-dezurna">🟢 Dežurna sada</span>
             <h2>{apoteka.naziv}</h2>
             <p className="adresa">{apoteka.adresa}</p>
             <p className="radno-vrijeme">Radno vrijeme: {apoteka.radnoVrijeme}</p>

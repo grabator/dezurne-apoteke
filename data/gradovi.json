@@ -4,8 +4,8 @@
     "naziv": "Sarajevo",
     "entitet": "Federacija BiH / Kanton Sarajevo",
     "tipDezurstva": "stalne",
-    "izvor": "PRIMJER - PROVJERITI (JU Apoteke Sarajevo, zvanični izvor)",
-    "izvorUrl": "",
+    "izvor": "JU Apoteke Sarajevo (zvanični sajt)",
+    "izvorUrl": "https://www.apoteke-sarajevo.ba/dezurne-apoteke/",
     "azurirano": "2026-09-29",
     "lat": 43.8563,
     "lng": 18.4131
@@ -15,8 +15,8 @@
     "naziv": "Mostar",
     "entitet": "Federacija BiH / Hercegovačko-neretvanski kanton",
     "tipDezurstva": "mjesecna-rotacija",
-    "izvor": "PRIMJER - PROVJERITI (Kantonalni zavod zdravstvenog osiguranja HNK)",
-    "izvorUrl": "",
+    "izvor": "Zavod zdravstvenog osiguranja HNŽ/K (raspored za septembar potvrđen; oktobar i ranije PRIMJER - PROVJERITI)",
+    "izvorUrl": "https://mostarski.ba/mostar/dezurna-apoteka/",
     "azurirano": "2026-09-29",
     "lat": 43.3438,
     "lng": 17.8078
