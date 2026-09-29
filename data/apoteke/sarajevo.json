@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sarajevo-1",
+    "naziv": "PRIMJER Apoteka Baščaršija - PROVJERITI",
+    "adresa": "PRIMJER ADRESA - PROVJERITI",
+    "telefon": "033 000-000 (PRIMJER)",
+    "lat": 43.8586,
+    "lng": 18.4318,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-2",
+    "naziv": "PRIMJER Apoteka Ilidža - PROVJERITI",
+    "adresa": "PRIMJER ADRESA - PROVJERITI",
+    "telefon": "033 000-001 (PRIMJER)",
+    "lat": 43.8256,
+    "lng": 18.3131,
+    "radnoVrijeme": "0-24",
+    "uvijekDezurna": true
+  },
+  {
+    "id": "sarajevo-3",
+    "naziv": "PRIMJER Apoteka Centar (nije 0-24) - PROVJERITI",
+    "adresa": "PRIMJER ADRESA - PROVJERITI",
+    "telefon": "033 000-002 (PRIMJER)",
+    "lat": 43.85,
+    "lng": 18.385,
+    "radnoVrijeme": "07-20",
+    "uvijekDezurna": false
+  }
+]

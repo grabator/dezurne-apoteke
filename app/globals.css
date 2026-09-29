@@ -1,0 +1,259 @@
+:root {
+  --zelena: #0f9d58;
+  --zelena-tamna: #0b7a43;
+  --pozadina: #f5f7f6;
+  --tekst: #1c1c1c;
+  --siva: #6b6b6b;
+  --crvena: #c62828;
+  --bijela: #ffffff;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--pozadina);
+  color: var(--tekst);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.zaglavlje {
+  background: linear-gradient(135deg, var(--zelena), var(--zelena-tamna));
+  padding: 18px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  color: var(--bijela);
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  min-height: 70vh;
+}
+
+.podnozje {
+  text-align: center;
+  color: var(--siva);
+  font-size: 13px;
+  padding: 20px;
+}
+
+.dugme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.dugme-glavno {
+  background: var(--zelena);
+  color: var(--bijela);
+}
+
+.dugme-glavno:active {
+  background: var(--zelena-tamna);
+}
+
+.dugme-sekundarno {
+  background: var(--bijela);
+  color: var(--zelena-tamna);
+  border: 2px solid var(--zelena);
+}
+
+.dugme:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.blok-lokacije {
+  margin-bottom: 24px;
+}
+
+.poruka-greske {
+  color: var(--crvena);
+  font-size: 14px;
+  margin: 4px 0 0;
+}
+
+.naslov-glavni {
+  font-size: 24px;
+  margin: 8px 0 4px;
+}
+
+.podnaslov {
+  color: var(--siva);
+  margin: 0 0 20px;
+  font-size: 15px;
+}
+
+.lista-gradova {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dugme-grada {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bijela);
+  border: 1px solid #e5e5e5;
+  border-radius: var(--border-radius);
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--tekst);
+  font-weight: 600;
+  font-size: 17px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
+}
+
+.dugme-grada:active {
+  transform: scale(0.98);
+}
+
+.dugme-grada:hover {
+  border-color: var(--zelena);
+  box-shadow: 0 2px 8px rgba(15, 157, 88, 0.12);
+}
+
+.strelica {
+  color: var(--zelena);
+  font-weight: 700;
+}
+
+.dugme-grada-neaktivno {
+  color: var(--siva);
+  background: #f0f1f0;
+  cursor: default;
+  box-shadow: none;
+}
+
+.dugme-grada-neaktivno:hover {
+  border-color: #e5e5e5;
+  box-shadow: none;
+}
+
+.sekcija-uskoro {
+  margin-top: 32px;
+}
+
+.naslov-sekcije {
+  font-size: 15px;
+  color: var(--siva);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.info-grada {
+  background: var(--bijela);
+  border-radius: var(--border-radius);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--siva);
+}
+
+.upozorenje {
+  background: #fff4e5;
+  border: 1px solid #f0c36d;
+  border-radius: var(--border-radius);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.lista-apoteka {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.kartica-apoteke {
+  background: var(--bijela);
+  border-radius: var(--border-radius);
+  padding: 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--zelena);
+}
+
+.kartica-apoteke h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+
+.adresa,
+.radno-vrijeme,
+.udaljenost {
+  margin: 2px 0;
+  color: var(--siva);
+  font-size: 14px;
+}
+
+.udaljenost {
+  color: var(--zelena-tamna);
+  font-weight: 600;
+}
+
+.dugmad-apoteke {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.dugmad-apoteke .dugme {
+  margin-bottom: 0;
+}
+
+.link-prijava {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  color: var(--siva);
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.link-nazad {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--zelena-tamna);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.poruka-prazno {
+  background: var(--bijela);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  text-align: center;
+  color: var(--siva);
+}

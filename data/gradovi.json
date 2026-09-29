@@ -1,0 +1,101 @@
+[
+  {
+    "id": "sarajevo",
+    "naziv": "Sarajevo",
+    "entitet": "Federacija BiH / Kanton Sarajevo",
+    "tipDezurstva": "stalne",
+    "izvor": "PRIMJER - PROVJERITI (JU Apoteke Sarajevo, zvanični izvor)",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 43.8563,
+    "lng": 18.4131
+  },
+  {
+    "id": "mostar",
+    "naziv": "Mostar",
+    "entitet": "Federacija BiH / Hercegovačko-neretvanski kanton",
+    "tipDezurstva": "mjesecna-rotacija",
+    "izvor": "PRIMJER - PROVJERITI (Kantonalni zavod zdravstvenog osiguranja HNK)",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 43.3438,
+    "lng": 17.8078
+  },
+  {
+    "id": "istocno-sarajevo",
+    "naziv": "Istočno Sarajevo",
+    "entitet": "Republika Srpska",
+    "tipDezurstva": "nepoznato",
+    "izvor": "Podaci još nisu uneseni",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 43.798,
+    "lng": 18.364
+  },
+  {
+    "id": "banja-luka",
+    "naziv": "Banja Luka",
+    "entitet": "Republika Srpska",
+    "tipDezurstva": "nepoznato",
+    "izvor": "Podaci još nisu uneseni",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 44.7722,
+    "lng": 17.191
+  },
+  {
+    "id": "tuzla",
+    "naziv": "Tuzla",
+    "entitet": "Federacija BiH / Tuzlanski kanton",
+    "tipDezurstva": "nepoznato",
+    "izvor": "Podaci još nisu uneseni",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 44.5386,
+    "lng": 18.6767
+  },
+  {
+    "id": "zenica",
+    "naziv": "Zenica",
+    "entitet": "Federacija BiH / Zeničko-dobojski kanton",
+    "tipDezurstva": "nepoznato",
+    "izvor": "Podaci još nisu uneseni",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 44.2019,
+    "lng": 17.9073
+  },
+  {
+    "id": "bijeljina",
+    "naziv": "Bijeljina",
+    "entitet": "Republika Srpska",
+    "tipDezurstva": "nepoznato",
+    "izvor": "Podaci još nisu uneseni",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 44.7581,
+    "lng": 19.2148
+  },
+  {
+    "id": "bihac",
+    "naziv": "Bihać",
+    "entitet": "Federacija BiH / Unsko-sanski kanton",
+    "tipDezurstva": "nepoznato",
+    "izvor": "Podaci još nisu uneseni",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 44.8175,
+    "lng": 15.87
+  },
+  {
+    "id": "brcko",
+    "naziv": "Brčko",
+    "entitet": "Brčko distrikt",
+    "tipDezurstva": "nepoznato",
+    "izvor": "Podaci još nisu uneseni",
+    "izvorUrl": "",
+    "azurirano": "2026-09-29",
+    "lat": 44.8694,
+    "lng": 18.8081
+  }
+]

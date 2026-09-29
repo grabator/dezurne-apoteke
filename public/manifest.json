@@ -1,0 +1,18 @@
+{
+  "name": "Dežurne apoteke BiH",
+  "short_name": "Dež. apoteke",
+  "description": "Pronađi dežurnu apoteku u BiH",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f9d58",
+  "lang": "bs",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

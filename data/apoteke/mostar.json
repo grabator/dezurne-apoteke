@@ -1,0 +1,29 @@
+[
+  {
+    "id": "mostar-1",
+    "naziv": "PRIMJER Apoteka Centar Mostar - PROVJERITI",
+    "adresa": "PRIMJER ADRESA - PROVJERITI",
+    "telefon": "036 000-000 (PRIMJER)",
+    "lat": 43.3438,
+    "lng": 17.8078,
+    "radnoVrijeme": "0-24 (u mjesecu dežurstva)"
+  },
+  {
+    "id": "mostar-2",
+    "naziv": "PRIMJER Apoteka Zapadni Mostar - PROVJERITI",
+    "adresa": "PRIMJER ADRESA - PROVJERITI",
+    "telefon": "036 000-001 (PRIMJER)",
+    "lat": 43.339,
+    "lng": 17.795,
+    "radnoVrijeme": "0-24 (u mjesecu dežurstva)"
+  },
+  {
+    "id": "mostar-3",
+    "naziv": "PRIMJER Apoteka Sjever Mostar - PROVJERITI",
+    "adresa": "PRIMJER ADRESA - PROVJERITI",
+    "telefon": "036 000-002 (PRIMJER)",
+    "lat": 43.36,
+    "lng": 17.81,
+    "radnoVrijeme": "0-24 (u mjesecu dežurstva)"
+  }
+]
