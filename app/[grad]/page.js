@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import { izracunajDezurneApoteke, ucitajPostavke } from "@/lib/apoteke";
 import ListaApoteka from "@/components/ListaApoteka";
 
-export default function StranicaGrada({ params }) {
-  const { grad, apoteke } = izracunajDezurneApoteke(params.grad, new Date());
+export default async function StranicaGrada({ params }) {
+  const { grad: gradId } = await params;
+  const { grad, apoteke } = izracunajDezurneApoteke(gradId, new Date());
 
   if (!grad) {
     notFound();
