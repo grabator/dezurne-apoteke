@@ -1,44 +1,40 @@
 # Dežurne apoteke BiH
 
-Mala vježba u Next.js-u — aplikacija koja pokaže koja je apoteka trenutno dežurna u odabranom gradu u BiH.
+Koja apoteka radi **upravo sada**? Mobilna web aplikacija koja za odabrani grad u BiH pokaže dežurne apoteke — adresu, telefon i put do vrata.
 
-> Napomena: dok sam ovo pravio, ispostavilo se da već postoji [dezurna.net](https://dezurna.net) koji radi istu stvar (i to dobro, za više gradova u regiji). Ovaj repo ostaje kao lični/portfolio projekat i vježba, ne kao pokušaj da ga zamijeni.
+Probni / portfolio projekat u Next.js-u. Slično već postoji na [dezurna.net](https://dezurna.net).
 
-## Šta radi
+## Mogućnosti
 
-- Odabereš grad (ili klikneš "Koristi moju lokaciju" da te aplikacija sama uputi na najbliži)
-- Vidiš koja je apoteka dežurna upravo sada — ime, adresa, telefon, radno vrijeme
-- Dugme za poziv, dugme za navigaciju (Google Maps), i dugme da prijaviš grešku u podacima
-- Sama izračunava ko dežura na osnovu današnjeg datuma — nekim gradovima (Sarajevo) je više apoteka *stalno* dežurno (0-24), a nekim (Mostar) se dežurstvo mijenja svakog mjeseca
+- Automatsko pronalaženje najbližeg grada (lokacija ostaje na uređaju)
+- Dežurne apoteke za danas, sortiranje po udaljenosti
+- Dugmad **Pozovi** i **Vodi me** (Google Maps)
+- Podrška za stalne 0–24 apoteke i mjesečnu rotaciju
+- Svijetli i tamni mod, instalacija na mobitel (PWA)
 
-Trenutno ima stvarne podatke za Sarajevo i Mostar (provjereno sa zvaničnih sajtova). Ostali gradovi iz "Faza 1" liste su tu kao "uskoro dostupno" dok se ne unesu podaci.
+Stvarni podaci trenutno postoje za **Sarajevo** i **Mostar**; ostali gradovi su označeni kao "uskoro".
 
-## Kako pokrenuti
+## Pokretanje
 
 ```bash
 npm install
 npm run dev
 ```
 
-Otvori `http://localhost:3000`.
+Aplikacija radi na `http://localhost:3000`.
 
-## Kako dodati novi grad
+## Dodavanje grada
 
-Nije potrebno dirati kod — samo podatke:
+Bez izmjene koda — samo podaci u `data/`:
 
-1. U `data/gradovi.json` dodaj novi grad (id, naziv, tip dežurstva, lat/lng za grad).
-2. Napravi `data/apoteke/<id-grada>.json` sa listom apoteka (kopiraj format iz `sarajevo.json` ili `mostar.json`).
-3. Ako grad ima rotaciju (kao Mostar), napravi i `data/dezurstva/<id-grada>.json`.
+1. Dodaj grad u `gradovi.json`
+2. Dodaj apoteke u `apoteke/<grad>.json`
+3. Za gradove s rotacijom dodaj raspored u `dezurstva/<grad>.json`
 
-Aplikacija automatski prepozna novi fajl i prikaže grad.
+## Tehnologije
 
-## Ideje za dalje (nisu urađene, samo ideje)
+Next.js 16 · React 19 · JSON podaci · bez baze
 
-- Dodati stvarne podatke za ostale gradove (Tuzla, Zenica, Banja Luka, Bijeljina, Bihać, Brčko, Istočno Sarajevo)
-- Mogućnost da korisnici sami predlože apoteku/grešku kroz formu, ne samo mail
-- Pravi PWA sa offline keširanjem (trenutno ima samo osnovni manifest + service worker)
-- Baza podataka umjesto JSON fajlova, ako se doda puno gradova ili neko bude ručno ažurirao podatke često
+---
 
-## Napomena o tačnosti
-
-Podaci o apotekama mogu biti zastarjeli. Uvijek pozovi apoteku prije nego odeš, pogotovo ako je hitno.
+Podaci se preuzimaju iz javnih izvora i mogu kasniti — uvijek nazovi apoteku prije odlaska.
