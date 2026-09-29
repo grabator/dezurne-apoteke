@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { udaljenostKm } from "@/lib/distance";
+import { IkonaLokacija } from "@/components/Ikone";
 
 export default function DugmeLokacija({ gradovi }) {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function DugmeLokacija({ gradovi }) {
     setGreska("");
 
     if (!("geolocation" in navigator)) {
-      setGreska("Tvoj preglednik ne podržava automatsko prepoznavanje lokacije.");
+      setGreska("Tvoj preglednik ne podržava prepoznavanje lokacije. Odaberi grad ispod.");
       return;
     }
 
@@ -34,27 +35,34 @@ export default function DugmeLokacija({ gradovi }) {
           }
         }
 
-        setUcitava(false);
-
         if (najbliziGrad) {
           router.push(`/${najbliziGrad.id}`);
         } else {
-          setGreska("Nismo pronašli grad u blizini. Odaberi grad ručno ispod.");
+          setUcitava(false);
+          setGreska("Nismo pronašli grad u blizini. Odaberi grad ispod.");
         }
       },
       () => {
         setUcitava(false);
-        setGreska("Nismo dobili pristup lokaciji. Odaberi grad ručno ispod.");
-      }
+        setGreska("Nismo dobili pristup lokaciji. Odaberi grad ispod.");
+      },
+      { timeout: 10000, maximumAge: 300000 }
     );
   }
 
   return (
-    <div className="blok-lokacije">
-      <button className="dugme dugme-glavno" onClick={pronadjiNajblizi} disabled={ucitava}>
-        {ucitava ? "Tražim..." : "📍 Koristi moju lokaciju"}
+    <div className="lokacija">
+      <button className="dugme dugme-glavno dugme-veliko" onClick={pronadjiNajblizi} disabled={ucitava}>
+        <IkonaLokacija velicina={22} className={ucitava ? "vrti" : undefined} />
+        {ucitava ? "Tražim tvoju lokaciju…" : "Pronađi najbližu dežurnu"}
       </button>
-      {greska && <p className="poruka-greske">{greska}</p>}
+      {greska ? (
+        <p className="poruka-greske" role="alert">
+          {greska}
+        </p>
+      ) : (
+        <p className="lokacija-napomena">Lokacija ostaje na tvom uređaju — ne šaljemo je nigdje.</p>
+      )}
     </div>
   );
 }

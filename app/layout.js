@@ -1,37 +1,59 @@
-import { Manrope } from "next/font/google";
+import { Fraunces, Onest } from "next/font/google";
 import "./globals.css";
 import RegistracijaServiceWorkera from "@/components/RegistracijaServiceWorkera";
+import { Logo } from "@/components/Ikone";
 
-const manrope = Manrope({
+const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-manrope",
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT"],
+  variable: "--font-serif",
+});
+
+const onest = Onest({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-sans",
 });
 
 export const metadata = {
   title: "Dežurne apoteke BiH",
-  description: "Pronađi dežurnu apoteku u svom gradu upravo sada.",
+  description: "Koja apoteka radi upravo sada — dežurne apoteke po gradovima u BiH.",
   manifest: "/manifest.json",
 };
 
 export const viewport = {
-  themeColor: "#0f9d58",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f2ea" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b110e" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="bs" className={manrope.variable}>
+    <html lang="bs" className={`${fraunces.variable} ${onest.variable}`}>
       <body>
         <RegistracijaServiceWorkera />
         <header className="zaglavlje">
-          <a href="/" className="logo">
-            💊 Dežurne apoteke BiH
-          </a>
+          <div className="zaglavlje-sadrzaj">
+            <a href="/" className="logo">
+              <Logo />
+              <span className="logo-tekst">
+                Dežurne apoteke <span className="logo-oznaka">BiH</span>
+              </span>
+            </a>
+          </div>
         </header>
-        <main>{children}</main>
+        <main className="omotac">{children}</main>
         <footer className="podnozje">
-          <p>Podaci mogu biti netačni ili zastarjeli — uvijek pozovi apoteku prije odlaska.</p>
+          <div className="podnozje-sadrzaj">
+            <p>
+              Podaci se preuzimaju iz javnih izvora i mogu biti zastarjeli. U hitnim
+              slučajevima nazovi <a href="tel:124">124</a>.
+            </p>
+            <p className="podnozje-sitno">Probni projekat · nije zvanični servis</p>
+          </div>
         </footer>
       </body>
     </html>

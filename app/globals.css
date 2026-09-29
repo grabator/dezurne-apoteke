@@ -1,281 +1,839 @@
 :root {
-  --zelena: #0f9d58;
-  --zelena-tamna: #0b7a43;
-  --pozadina: #f5f7f6;
-  --tekst: #1c1c1c;
-  --siva: #6b6b6b;
-  --crvena: #c62828;
-  --bijela: #ffffff;
-  --border-radius: 12px;
+  --papir: #f5f2ea;
+  --povrsina: #fffdf8;
+  --povrsina-2: #ece8dd;
+  --tinta: #0f1a15;
+  --tinta-2: #4b5650;
+  --tinta-3: #7f8983;
+  --linija: rgba(15, 26, 21, 0.09);
+  --linija-jaka: rgba(15, 26, 21, 0.17);
+  --akcent: #0c6b48;
+  --akcent-jak: #09573a;
+  --akcent-mek: #e0eee4;
+  --na-akcentu: #fbfaf5;
+  --uzivo: #1f9d5c;
+  --upozorenje-poz: #f5ead2;
+  --upozorenje-tinta: #6b4f10;
+  --greska: #b42318;
+  --sjena: 0 1px 2px rgba(15, 26, 21, 0.04), 0 10px 28px -14px rgba(15, 26, 21, 0.14);
+  --sjena-hover: 0 1px 2px rgba(15, 26, 21, 0.05), 0 18px 36px -16px rgba(15, 26, 21, 0.24);
+  --serif: var(--font-serif), Georgia, "Times New Roman", serif;
+  --sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sirina: 1080px;
+  color-scheme: light;
 }
 
-* {
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papir: #0b110e;
+    --povrsina: #111915;
+    --povrsina-2: #1a241f;
+    --tinta: #edf1ee;
+    --tinta-2: #a9b3ad;
+    --tinta-3: #717c76;
+    --linija: rgba(237, 241, 238, 0.08);
+    --linija-jaka: rgba(237, 241, 238, 0.16);
+    --akcent: #4ad295;
+    --akcent-jak: #72e0ad;
+    --akcent-mek: rgba(74, 210, 149, 0.12);
+    --na-akcentu: #04120b;
+    --uzivo: #4ad295;
+    --upozorenje-poz: rgba(233, 187, 92, 0.1);
+    --upozorenje-tinta: #ebc77f;
+    --greska: #ff8f85;
+    --sjena: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 14px 30px -18px rgba(0, 0, 0, 0.7);
+    --sjena-hover: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 20px 40px -18px rgba(0, 0, 0, 0.85);
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  background: var(--pozadina);
-  color: var(--tekst);
-  font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
-  font-size: 17px;
-  line-height: 1.4;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--papir);
+  background-image: radial-gradient(
+    1100px 520px at 88% -12%,
+    var(--akcent-mek),
+    transparent 62%
+  );
+  background-repeat: no-repeat;
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
 
+::selection {
+  background: var(--akcent-mek);
+  color: var(--tinta);
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Zaglavlje ---------- */
+
 .zaglavlje {
-  background: linear-gradient(135deg, var(--zelena), var(--zelena-tamna));
-  padding: 18px 20px;
   position: sticky;
   top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  background: color-mix(in srgb, var(--papir) 78%, transparent);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid var(--linija);
+}
+
+.zaglavlje-sadrzaj {
+  max-width: var(--sirina);
+  margin: 0 auto;
+  padding: 12px 20px;
 }
 
 .logo {
-  color: var(--bijela);
-  font-size: 19px;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
+}
+
+.logo-tekst {
+  font-weight: 600;
+  font-size: 16px;
   letter-spacing: -0.01em;
 }
 
-main {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 20px 16px 40px;
-  min-height: 70vh;
+.logo-oznaka {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 7px;
+  border: 1px solid var(--linija-jaka);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--tinta-2);
+  vertical-align: 2px;
 }
 
-.podnozje {
-  text-align: center;
-  color: var(--siva);
-  font-size: 13px;
-  padding: 20px;
+.omotac {
+  flex: 1;
+  width: 100%;
+  max-width: var(--sirina);
+  margin: 0 auto;
+  padding: 32px 20px 72px;
 }
+
+/* ---------- Zajednički elementi ---------- */
+
+.nadnaslov {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  padding: 6px 13px 6px 11px;
+  border: 1px solid var(--linija);
+  border-radius: 999px;
+  background: var(--povrsina);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tinta-2);
+}
+
+.uzivo-tacka {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--uzivo);
+  animation: puls 2.2s ease-out infinite;
+}
+
+@keyframes puls {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--uzivo) 55%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 7px transparent;
+  }
+}
+
+.znacka {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--akcent-mek);
+  color: var(--akcent);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.znacka .uzivo-tacka {
+  width: 7px;
+  height: 7px;
+}
+
+.znacka-prazna {
+  background: var(--povrsina-2);
+  color: var(--tinta-3);
+}
+
+/* ---------- Dugmad ---------- */
 
 .dugme {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 16px;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: var(--border-radius);
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.dugme-glavno {
-  background: var(--zelena);
-  color: var(--bijela);
-}
-
-.dugme-glavno:active {
-  background: var(--zelena-tamna);
-}
-
-.dugme-sekundarno {
-  background: var(--bijela);
-  color: var(--zelena-tamna);
-  border: 2px solid var(--zelena);
-}
-
-.dugme:disabled {
-  opacity: 0.6;
-  cursor: default;
-}
-
-.blok-lokacije {
-  margin-bottom: 24px;
-}
-
-.poruka-greske {
-  color: var(--crvena);
-  font-size: 14px;
-  margin: 4px 0 0;
-}
-
-.naslov-glavni {
-  font-size: 24px;
-  margin: 8px 0 4px;
-}
-
-.podnaslov {
-  color: var(--siva);
-  margin: 0 0 20px;
-  font-size: 15px;
-}
-
-.lista-gradova {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
-}
-
-.dugme-grada {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--bijela);
-  border: 1px solid #e5e5e5;
-  border-radius: var(--border-radius);
-  padding: 16px 18px;
+  min-height: 56px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  font: 600 16px/1.2 var(--sans);
+  white-space: nowrap;
   text-decoration: none;
-  color: var(--tekst);
-  font-weight: 600;
-  font-size: 17px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
-.dugme-grada:active {
+.dugme:active {
   transform: scale(0.98);
 }
 
-.dugme-grada:hover {
-  border-color: var(--zelena);
-  box-shadow: 0 2px 8px rgba(15, 157, 88, 0.12);
+.dugme:focus-visible,
+.dugme-tiho:focus-visible,
+.red-grada:focus-visible,
+.link-nazad:focus-visible {
+  outline: 2px solid var(--akcent);
+  outline-offset: 3px;
 }
 
-.strelica {
-  color: var(--zelena);
-  font-weight: 700;
+.dugme-glavno {
+  background: var(--akcent);
+  color: var(--na-akcentu);
+  box-shadow: 0 10px 22px -12px color-mix(in srgb, var(--akcent) 80%, transparent);
 }
 
-.dugme-grada-neaktivno {
-  color: var(--siva);
-  background: #f0f1f0;
-  cursor: default;
-  box-shadow: none;
+.dugme-sekundarno {
+  background: var(--povrsina);
+  color: var(--tinta);
+  border-color: var(--linija-jaka);
 }
 
-.dugme-grada-neaktivno:hover {
-  border-color: #e5e5e5;
-  box-shadow: none;
+@media (hover: hover) {
+  .dugme-glavno:hover {
+    background: var(--akcent-jak);
+  }
+  .dugme-sekundarno:hover {
+    border-color: var(--tinta-3);
+  }
 }
 
-.sekcija-uskoro {
+.dugme:disabled {
+  opacity: 0.75;
+  cursor: progress;
+}
+
+.dugme-veliko {
+  width: 100%;
+  min-height: 62px;
+  border-radius: 18px;
+  font-size: 17px;
+}
+
+.dugme-onemoguceno {
+  background: var(--povrsina-2);
+  color: var(--tinta-3);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
+.dugme-tekst {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.dugme-podtekst {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.8;
+  font-variant-numeric: tabular-nums;
+}
+
+.dugme-tiho {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 1px solid var(--linija-jaka);
+  border-radius: 999px;
+  background: var(--povrsina);
+  color: var(--tinta);
+  font: 500 14px/1 var(--sans);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+@media (hover: hover) {
+  .dugme-tiho:hover {
+    border-color: var(--tinta-3);
+  }
+}
+
+.vrti {
+  animation: vrti 1.1s linear infinite;
+}
+
+@keyframes vrti {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.poruka-greske {
+  margin: 12px 2px 0;
+  color: var(--greska);
+  font-size: 14px;
+}
+
+/* ---------- Početna ---------- */
+
+.hero-naslov {
+  margin: 22px 0 16px;
+  font-family: var(--serif);
+  font-size: clamp(42px, 10.5vw, 70px);
+  font-weight: 500;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.hero-naslov em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--akcent);
+}
+
+.hero-uvod {
+  max-width: 36ch;
+  margin: 0 0 30px;
+  color: var(--tinta-2);
+  font-size: 18px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.lokacija-napomena {
+  margin: 12px 2px 0;
+  color: var(--tinta-3);
+  font-size: 13px;
+}
+
+.sekcija-gradovi {
+  margin-top: 56px;
+}
+
+.sekcija-zaglavlje {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--linija);
+}
+
+.sekcija-naslov {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.sekcija-brojac {
+  color: var(--tinta-3);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.lista-gradova {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.red-grada {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 2px;
+  border-bottom: 1px solid var(--linija);
+  text-decoration: none;
+}
+
+.red-grada-tekst {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.red-grada-naziv {
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+  font-variation-settings: "opsz" 72;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.red-grada-entitet {
+  color: var(--tinta-3);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.red-grada-strelica {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--linija-jaka);
+  border-radius: 50%;
+  color: var(--tinta-2);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .red-grada:hover .red-grada-strelica {
+    transform: translateX(3px);
+    background: var(--akcent);
+    border-color: var(--akcent);
+    color: var(--na-akcentu);
+  }
+}
+
+.uskoro {
   margin-top: 32px;
 }
 
-.naslov-sekcije {
-  font-size: 15px;
-  color: var(--siva);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 10px;
-}
-
-.info-grada {
-  background: var(--bijela);
-  border-radius: var(--border-radius);
-  padding: 14px 16px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  color: var(--siva);
-}
-
-.info-grada p {
-  margin: 4px 0;
-}
-
-.info-grada a {
-  color: var(--zelena-tamna);
+.uskoro-naslov {
+  margin: 0 0 12px;
+  color: var(--tinta-3);
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
-.upozorenje {
-  background: #fff4e5;
-  border: 1px solid #f0c36d;
-  border-radius: var(--border-radius);
-  padding: 14px 16px;
-  margin-bottom: 20px;
+.uskoro-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cip {
+  padding: 7px 14px;
+  border: 1px dashed var(--linija-jaka);
+  border-radius: 999px;
+  color: var(--tinta-2);
   font-size: 14px;
+}
+
+@media (min-width: 900px) {
+  .omotac {
+    padding-top: 56px;
+  }
+
+  .pocetna {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+
+  .hero {
+    position: sticky;
+    top: 112px;
+  }
+
+  .sekcija-gradovi {
+    margin-top: 6px;
+  }
+}
+
+/* ---------- Stranica grada ---------- */
+
+.link-nazad {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px 8px 11px;
+  border: 1px solid var(--linija);
+  border-radius: 999px;
+  background: var(--povrsina);
+  color: var(--tinta-2);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+@media (hover: hover) {
+  .link-nazad:hover {
+    border-color: var(--linija-jaka);
+    color: var(--tinta);
+  }
+}
+
+.grad-zaglavlje {
+  margin: 36px 0 28px;
+}
+
+.grad-naslov {
+  margin: 20px 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(52px, 14vw, 96px);
+  font-weight: 500;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.grad-entitet {
+  margin: 0;
+  color: var(--tinta-2);
+  font-size: 16px;
+}
+
+.grad-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+  margin: 28px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--linija);
+}
+
+.grad-meta dt {
+  margin-bottom: 4px;
+  color: var(--tinta-3);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.grad-meta dd {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.grad-meta-izvor {
+  grid-column: 1 / -1;
+}
+
+.grad-meta a {
+  color: var(--akcent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--akcent) 35%, transparent);
+  text-underline-offset: 3px;
+}
+
+.grad-meta a svg {
+  margin-left: 4px;
+  vertical-align: -2px;
+}
+
+@media (min-width: 720px) {
+  .grad-meta {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    column-gap: 48px;
+  }
+
+  .grad-meta-izvor {
+    grid-column: auto;
+  }
+}
+
+.napomena {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 36px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--upozorenje-poz);
+  color: var(--upozorenje-tinta);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.napomena svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.napomena p {
+  margin: 0;
+}
+
+.napomena strong {
+  font-weight: 650;
+}
+
+.traka {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.traka-broj {
+  margin: 0;
+  color: var(--tinta-2);
+  font-size: 15px;
+}
+
+.traka-cifra {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--tinta);
+}
+
+.traka-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--akcent);
+  font-size: 13.5px;
+  font-weight: 600;
 }
 
 .lista-apoteka {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 760px) {
+  .lista-apoteka {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.kartica {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 12px;
+  padding: 22px;
+  border: 1px solid var(--linija);
+  border-radius: 22px;
+  background: var(--povrsina);
+  box-shadow: var(--sjena);
+  transition: box-shadow 0.2s ease;
 }
 
-.kartica-apoteke {
-  background: var(--bijela);
-  border-radius: var(--border-radius);
-  padding: 18px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid var(--zelena);
+@media (hover: hover) {
+  .kartica:hover {
+    box-shadow: var(--sjena-hover);
+  }
 }
 
-.kartica-apoteke h2 {
-  margin: 0 0 6px;
-  font-size: 19px;
-}
-
-.oznaka-dezurna {
-  display: inline-block;
-  background: #e6f6ec;
-  color: var(--zelena-tamna);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  margin-bottom: 10px;
-  letter-spacing: 0.01em;
-}
-
-.adresa,
-.radno-vrijeme,
-.udaljenost {
-  margin: 2px 0;
-  color: var(--siva);
-  font-size: 14px;
-}
-
-.udaljenost {
-  color: var(--zelena-tamna);
-  font-weight: 600;
-}
-
-.dugmad-apoteke {
+.kartica-vrh {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.kartica-redni {
+  color: var(--tinta-3);
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+  font-variant-numeric: tabular-nums;
+}
+
+.kartica-naziv {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 500;
+  font-variation-settings: "opsz" 72;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.kartica-detalji {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kartica-detalji li {
+  display: flex;
+  align-items: flex-start;
   gap: 10px;
-  margin-top: 14px;
+  color: var(--tinta-2);
+  font-size: 15px;
 }
 
-.dugmad-apoteke .dugme {
-  margin-bottom: 0;
+.kartica-detalji svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--tinta-3);
 }
 
-.link-prijava {
-  display: block;
-  text-align: center;
-  margin-top: 12px;
-  color: var(--siva);
-  font-size: 13px;
+.kartica-udaljenost {
+  margin: 14px 0 0;
+  color: var(--akcent);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.kartica-akcije {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.kartica-akcije .dugme {
+  padding: 0 14px;
+}
+
+.kartica-prijava {
+  align-self: center;
+  margin-top: 16px;
+  color: var(--tinta-3);
+  font-size: 12.5px;
   text-decoration: underline;
+  text-decoration-color: var(--linija-jaka);
+  text-underline-offset: 3px;
 }
 
-.link-nazad {
-  display: inline-block;
-  margin-bottom: 16px;
-  color: var(--zelena-tamna);
-  text-decoration: none;
+@media (hover: hover) {
+  .kartica-prijava:hover {
+    color: var(--tinta-2);
+  }
+}
+
+.prazno {
+  padding: 36px 24px;
+  border: 1px dashed var(--linija-jaka);
+  border-radius: 22px;
+  color: var(--tinta-2);
+  text-align: center;
+}
+
+.prazno p {
+  max-width: 44ch;
+  margin: 0 auto;
+}
+
+.prazno .prazno-naslov {
+  margin-bottom: 8px;
+  color: var(--tinta);
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+/* ---------- Podnožje ---------- */
+
+.podnozje {
+  border-top: 1px solid var(--linija);
+}
+
+.podnozje-sadrzaj {
+  max-width: var(--sirina);
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+  color: var(--tinta-3);
+  font-size: 13.5px;
+}
+
+.podnozje-sadrzaj p {
+  margin: 0 0 6px;
+}
+
+.podnozje-sadrzaj a {
+  color: var(--tinta-2);
   font-weight: 600;
 }
 
-.poruka-prazno {
-  background: var(--bijela);
-  border-radius: var(--border-radius);
-  padding: 20px;
-  text-align: center;
-  color: var(--siva);
+.podnozje-sitno {
+  font-size: 12px;
+}
+
+/* ---------- Pokret ---------- */
+
+.hero,
+.grad-zaglavlje {
+  animation: ulaz 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.ulaz {
+  animation: ulaz 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 60ms + 120ms);
+}
+
+@keyframes ulaz {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

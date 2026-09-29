@@ -4,8 +4,8 @@
   "description": "Pronađi dežurnu apoteku u BiH",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0f9d58",
+  "background_color": "#f5f2ea",
+  "theme_color": "#f5f2ea",
   "lang": "bs",
   "icons": [
     {
